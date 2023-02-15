@@ -1,4 +1,5 @@
 module.exports = {
+  // parser: "babel-eslint",
   root: true,
   env: {
     node: true
@@ -7,6 +8,9 @@ module.exports = {
     "plugin:vue/vue3-essential",
     "eslint:recommended",
     "@vue/typescript/recommended",
+    // "@vue/prettier",
+    // "@vue/typescript/recommended",
+    // "@vue/prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
   parserOptions: {
