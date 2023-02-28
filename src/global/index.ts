@@ -1,10 +1,5 @@
-// import { ElButton } from "element-plus/lib/index"
-// import "element-plus/theme-chalk/base.css"
+import registerElement from "./register-element"
 
-// const components = [ElButton]
-
-// export function register(app: any): void {
-//   components.forEach((component) => {
-//     app.component(component.name, component)
-//   })
-// }
+export function register(app: any): void {
+  registerElement(app)
+}

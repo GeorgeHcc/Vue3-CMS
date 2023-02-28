@@ -8,9 +8,9 @@
 import { defineComponent } from "vue"
 // import { ElButton } from "element-plus/lib/index"
 export default defineComponent({
-  name: "HomeView"
-  // components: {
-  //   ElButton
-  // }
+  name: "HomeView",
+  components: {
+    // ElButton
+  }
 })
 </script>
