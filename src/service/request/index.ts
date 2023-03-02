@@ -56,7 +56,7 @@ class apiRequest {
     )
   }
 
-  request<T>(config: hynRequestConfig): Promise<T> {
+  request<T>(config: hynRequestConfig<T>): Promise<T> {
     //是否存在拦截器
     return new Promise((resolve, reject) => {
       if (config.interceptors?.requestInterceptor) {
@@ -70,7 +70,7 @@ class apiRequest {
         .then((res) => {
           //单个请求的对对数据的处理
           if (config.interceptors?.responseInterceptor) {
-            // res = config.interceptors.responseInterceptor(res)
+            res = config.interceptors.responseInterceptor(res)
           }
           //将showloading设置为true
           this.showLoading = DEAFULT_LOADING
