@@ -10,6 +10,7 @@ const hynRequest = new apiRequest({
       return config
     }
   }
+  // showLoading: true
 })
 hynRequest.request({
   method: "GET",
