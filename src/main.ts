@@ -2,6 +2,8 @@ import { createApp } from "vue"
 import App from "./App.vue"
 import router from "./router"
 import store from "./store"
+import "normalize.css"
+import "./assets/img"
 import "./service/index"
 // import "./service/request/config"
 // import { register } from "./global" //不再使用这种方式，现使用插件自动按需引入
@@ -13,6 +15,4 @@ import "./service/index"
 const app = createApp(App)
 app.use(store)
 app.use(router)
-// .use(ElementPlus, { size: "small", zIndex: 3000 })//全局引入
 app.mount("#app")
-// register(app)

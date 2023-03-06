@@ -3,8 +3,11 @@
     "target": "esnext",
     "module": "esnext",
     "strict": true,
+    //jsx处理 -保留
     "jsx": "preserve",
+    //按照node的方式解析模块
     "moduleResolution": "node",
+    //跳过三方库的类型检测
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -12,9 +15,10 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": ["webpack-env"],
+    "types": ["webpack-env","element-plus/global"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
@@ -25,5 +29,6 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+
 }

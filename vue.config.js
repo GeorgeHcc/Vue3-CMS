@@ -15,24 +15,6 @@ module.exports = {
         resolvers: [ElementPlusResolver()]
       })
     ]
-  }
+  },
+  lintOnSave: false
 }
-
-// module.exports = defineConfig({
-//   transpileDependencies: true,
-// configureWebpack: {
-//   plugins: [
-//     require("unplugin-vue-components/webpack")({
-//       /* options */
-//     })
-//   ]
-// }
-//   plugins: [
-//     AutoImport({
-//       resolvers: [ElementPlusResolver()]
-//     }),
-//     Components({
-//       resolvers: [ElementPlusResolver()]
-//     })
-//   ]
-// })
