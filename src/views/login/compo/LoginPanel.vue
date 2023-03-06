@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div class="login-panel"></div>
 </template>
 
 <script lang="ts">
@@ -9,6 +9,7 @@ export default defineComponent({
   setup() {
     return {}
   }
+  
 })
 </script>
 
