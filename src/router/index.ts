@@ -8,7 +8,7 @@ const routes: Array<RouteRecordRaw> = [
   // {
   //   path: "/login",
   //   // name: "about",
-  //   component: () =>import()
+  //   component: () => import("./views/login"/)
   // }
 ]
 

@@ -1,24 +1,24 @@
 <template>
-  <div id="app"></div>
+  <div class="app">
+    <login-page />
+    <router-view></router-view>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
-
+import LoginPage from "./views/login/LoginPage.vue"
 export default defineComponent({
+  name: "App",
+  components: { LoginPage },
   setup() {
     return {}
   }
 })
 </script>
 
-<style scoped>
-#app {
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less">
+.app {
+  height: 100%;
 }
 </style>
