@@ -1,5 +1,7 @@
-import registerElement from "./register-element"
+// import registerElement from "./register-element"
 
+import registerIcons from "./register-icons"
 export function register(app: any): void {
-  registerElement(app)
+  // registerElement(app)
+  registerIcons(app)
 }

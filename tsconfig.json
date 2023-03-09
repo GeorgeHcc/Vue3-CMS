@@ -15,7 +15,7 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": ["webpack-env","element-plus/global"],
+    "types": ["webpack-env", "element-plus/global"],
     "paths": {
       "@/*": ["src/*"],
       "components/*": ["src/components/*"]
@@ -27,8 +27,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "auto-imports.d.ts"
   ],
-  "exclude": ["node_modules"],
-
+  "exclude": ["node_modules"]
 }

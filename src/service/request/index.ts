@@ -1,7 +1,7 @@
 import axios from "axios"
 import type { AxiosInstance } from "axios"
 import type { hynInterceptors, hynRequestConfig } from "./type"
-import { ElLoading } from "element-plus"
+
 // import type { LoadingInstance } from "element-plus/es/components/loading/src/loading"
 const DEAFULT_LOADING = false
 class apiRequest {
@@ -31,7 +31,7 @@ class apiRequest {
             target: "HTML",
             lock: true,
             text: "正在加载数据...",
-            background: "rgba(0,0,0,0.1)"
+            background: "rgba(0,0,0,0.5)"
           })
         }
         return config
