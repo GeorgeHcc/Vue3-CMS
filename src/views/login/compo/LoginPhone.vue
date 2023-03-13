@@ -5,7 +5,6 @@
         <el-input
           v-model="phone.number"
           placeholder="请输入手机号"
-          show-password
           :prefix-icon="Iphone"
         />
       </el-form-item>
