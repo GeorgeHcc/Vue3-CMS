@@ -9,10 +9,12 @@
         />
       </el-form-item>
       <el-form-item>
-        <el-input v-model="phone.validNum" placeholder="请输入验证码" />
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary">发送</el-button>
+        <div class="sendSms">
+          <div class="validcode">
+            <el-input v-model="phone.validNum" placeholder="请输入验证码" />
+          </div>
+          <el-button type="primary">发送</el-button>
+        </div>
       </el-form-item>
     </el-form>
   </div>
@@ -27,4 +29,13 @@ const phone = reactive({
 })
 </script>
 
-<style scoped></style>
+<style scoped lang="less">
+.sendSms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .validcode {
+    width: 70%;
+  }
+}
+</style>
