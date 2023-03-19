@@ -32,7 +32,7 @@
 import { reactive, defineComponent } from "vue"
 import { Avatar, Lock } from "@element-plus/icons-vue"
 import type { ElForm } from "element-plus"
-// import { rules } from "../config/rules-account"
+import rules from "@/views/login/config/rules-account"
 import localCache from "@/utils/cache"
 import { useStore } from "vuex"
 import { useRouter } from "vue-router"
@@ -44,24 +44,6 @@ export default defineComponent({
     const account = reactive({
       name: localCache.getCache("name") ?? " ",
       password: localCache.getCache("password") ?? " "
-    })
-    const rules = reactive({
-      name: [
-        { required: true, message: "请输入账号", trigger: "blur" },
-        {
-          pattern: /^[0-9a-zA-Z]{4,8}$/,
-          message: "请输入4-8位字符或数字",
-          trigger: "blur"
-        }
-      ],
-      password: [
-        { required: true, message: "请输入密码", trigger: "blur" }
-        //   {
-        //     pattern: /^[0-0a-zA-Z]{6,12}$/,
-        //     message: "请输入6-12位字母或数字",
-        //     trigger: "blur"
-        //   }
-      ]
     })
 
     const formRef = ref<InstanceType<typeof ElForm>>()
@@ -82,7 +64,7 @@ export default defineComponent({
         }
       })
     }
-    store.dispatch("login/accountLoginAction")
+    // store.dispatch("login/accountLoginAction", { ...account })
     return {
       account,
       rules,
@@ -91,37 +73,6 @@ export default defineComponent({
     }
   }
 })
-// const account = reactive({
-//   name: "",
-//   password: ""
-// })
-// const rules = reactive({
-//   name: [
-//     { required: true, message: "请输入账号", trigger: "blur" },
-//     {
-//       pattern: /^[0-9a-zA-Z]{4,8}$/,
-//       message: "请输入4-8位字符或数字",
-//       trigger: "blur"
-//     }
-//   ],
-//   password: [
-//     { required: true, message: "请输入密码", trigger: "blur" },
-//     {
-//       pattern: /^[0-0a-zA-Z]{6,12}$/,
-//       message: "请输入6-12位字母或数字",
-//       trigger: "blur"
-//     }
-//   ]
-// })
-
-// const formRef = ref<InstanceType<typeof ElForm>>()
-// const loginAccount = () => {
-//   formRef.value?.validate((valid) => {
-//     if (valid) {
-//       console.log("account login")
-//     }
-//   })
-// }
 </script>
 
 <style scoped>

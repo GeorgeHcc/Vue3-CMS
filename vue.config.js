@@ -5,27 +5,26 @@ const { ElementPlusResolver } = require("unplugin-vue-components/resolvers")
 const path = require("path")
 // const { defineConfig } = require("@vue/cli-service")
 module.exports = {
-  // output: "./build",
-
+  outputDir: "./build",
+  devServer: {
+    proxy: {
+      "^/api": {
+        target: "http://127.0.0.1:4523/m1/2458010-0-default",
+        pathRewrite: {
+          "^/api": ""
+        },
+        changeOrigin: true
+      }
+    }
+  },
   configureWebpack: {
-    // devServer: {
-    //   proxy: {
-    //     "^/api": {
-    //       target: "http://152.136.185.210:5000",
-    //       pathRewrite: {
-    //         "^/api": ""
-    //       },
-    //       changeOrigin: true
-    //     }
-    //   }
-    // },
-    // resolve: {
-    //   extension: [".js", ".vue", ".mjs", ".ts", ".jsx", ".tsx", ".json"], //自动补齐文件后缀名
-    //   alias: {
-    //     //别名
-    //     "@": path.resolve(__dirname, "./src")
-    //   }
-    // },
+    resolve: {
+      //   extension: [".js", ".vue", ".mjs", ".ts", ".jsx", ".tsx", ".json"], //自动补齐文件后缀名
+      alias: {
+        //别名
+        "@": path.resolve(__dirname, "./src")
+      }
+    },
     plugins: [
       AutoImport({
         eslintrc: {

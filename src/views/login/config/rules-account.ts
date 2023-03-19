@@ -1,5 +1,5 @@
 import { reactive } from "vue"
-const rules = reactive({
+const rules = reactive<any>({
   name: [
     { required: true, message: "请输入账号", trigger: "blur" },
     {
@@ -11,10 +11,11 @@ const rules = reactive({
   password: [
     { required: true, message: "请输入密码", trigger: "blur" },
     {
-      pattern: /^[0-0a-zA-Z]{6,12}$/,
+      pattern: /^[0-9a-zA-Z]{6,12}$/,
       message: "请输入6-12位字母或数字",
       trigger: "blur"
     }
   ]
 })
-export { rules }
+
+export default rules

@@ -14,5 +14,5 @@ const hynRequest = new apiRequest({
 })
 hynRequest.request({
   method: "GET",
-  url: "/get"
+  url: "/login"
 })
