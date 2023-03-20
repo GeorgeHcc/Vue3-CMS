@@ -12,7 +12,4 @@ const hynRequest = new apiRequest({
   }
   // showLoading: true
 })
-hynRequest.request({
-  method: "GET",
-  url: "/login"
-})
+export default hynRequest
