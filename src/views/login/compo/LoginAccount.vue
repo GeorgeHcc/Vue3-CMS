@@ -1,8 +1,8 @@
 <template>
   <div class="login-account">
     <el-form :model="account" :rules="rules" ref="formRef">
-      <el-form-item prop="name">
-        <el-input v-model="account.name" placeholder="请输入账号">
+      <el-form-item prop="user">
+        <el-input v-model="account.user" placeholder="请输入账号">
           <template #prefix>
             <el-icon>
               <Avatar />
@@ -42,21 +42,22 @@ export default defineComponent({
     const route = useRouter()
     const store = useStore()
     const account = reactive({
-      name: localCache.getCache("name") ?? " ",
+      user: localCache.getCache("name") ?? " ",
       password: localCache.getCache("password") ?? " "
     })
 
     const formRef = ref<InstanceType<typeof ElForm>>()
 
     const loginAccount = (isKeepPassword: boolean) => {
-      console.log("formRef:", formRef.value)
+      // console.log("formRef:", formRef.value)
       if (isKeepPassword) {
-        localCache.setCache("name", account.name)
+        localCache.setCache("name", account.user)
         localCache.setCache("password", account.password)
       }
       formRef.value?.validate((valid) => {
         if (valid) {
-          ElMessage.success("欢迎登录！")
+          ElMessage.success("登录成功")
+          store.dispatch("accountLoginAction", { ...account })
           route.push("/home")
           console.log("account login", valid)
         } else {
@@ -64,7 +65,7 @@ export default defineComponent({
         }
       })
     }
-    // store.dispatch("login/accountLoginAction", { ...account })
+
     return {
       account,
       rules,

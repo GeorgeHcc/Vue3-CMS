@@ -47,7 +47,7 @@ class apiRequest {
           this.loading?.close()
         }, 1000)
         console.log("global response intercept suceess")
-        return res
+        return res.data
       },
       (err) => {
         console.log("global response intercept faild")

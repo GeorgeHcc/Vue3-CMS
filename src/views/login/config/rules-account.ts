@@ -1,6 +1,6 @@
 import { reactive } from "vue"
 const rules = reactive<any>({
-  name: [
+  user: [
     { required: true, message: "请输入账号", trigger: "blur" },
     {
       pattern: /^[0-9a-zA-Z]{4,8}$/,

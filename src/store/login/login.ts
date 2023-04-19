@@ -1,12 +1,14 @@
 import { Module } from "vuex"
-import { ILoginState, IAccount } from "./types"
+import { ILoginState } from "./types"
+import { IAccount } from "@/service/login/type"
 import { IRootState } from "../types"
 import { accountLoginRequest } from "@/service/login"
-
+import localCache from "@/utils/cache"
 const loginModule: Module<ILoginState, IRootState> = {
-  namespaced: true,
+  // namespaced: true,
   state: () => {
     return {
+      id: Number,
       token: "",
       userinfo: ""
     }
@@ -18,9 +20,19 @@ const loginModule: Module<ILoginState, IRootState> = {
   },
   getters: {},
   actions: {
-    async accountLoginAction({ commit }, payload: IAccount): any {
+    async accountLoginAction({ commit }, payload: IAccount) {
+      // debugger
+
+      // console.log("loginResult:", loginResult)
       const loginResult = await accountLoginRequest(payload)
-      const { id, token } = commit("changeToken", token)
+
+      if (loginResult.code === 200) {
+        const { token } = loginResult.data
+        commit("changeToken", token)
+        localCache.setCache("token", token)
+      }
+
+      // const { id, token } = commit("changeToken",token)
     }
   }
 }

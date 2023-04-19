@@ -29,7 +29,8 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "auto-imports.d.ts",
-    "components.d.ts"
+    "components.d.ts",
+    "src/**/image.d.ts"
   ],
   "exclude": ["node_modules"]
 }

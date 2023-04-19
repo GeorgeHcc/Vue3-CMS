@@ -44,6 +44,8 @@ import { User, Iphone } from "@element-plus/icons-vue"
 
 const isKeepPassword = ref(false)
 const accountRef = ref<InstanceType<typeof LoginAccount>>()
+console.log("accountRef:", accountRef.value)
+
 const phoneRef = ref<InstanceType<typeof LoginPhone>>()
 const currentTab = ref("account")
 const handleLogin = () => {
